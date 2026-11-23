@@ -9,22 +9,38 @@ PEP 503 index lookups.
 from __future__ import annotations
 
 import re
-import sys
 from pathlib import Path
+
+from ..model import Dependency, Ecosystem, Edge, Package, Project
+from ..toml_lite import TomlError
+from ..toml_lite import loads as toml_loads
 
 try:  # Python 3.11+
     import tomllib
-except ModuleNotFoundError:  # pragma: no cover - exercised only on 3.10
+except ModuleNotFoundError:  # only taken on Python 3.10
     tomllib = None  # type: ignore[assignment]
 
-from ..model import Dependency, Ecosystem, Edge, Package, Project
 
-TOML_MISSING_MESSAGE = (
-    "parsing pyproject.toml needs Python 3.11+ (this interpreter is "
-    + ".".join(str(part) for part in sys.version_info[:2])
-    + "); requirements.txt is still supported on 3.10 - upgrade Python or scan a "
-    "requirements-only project"
-)
+def _parse_toml(text: str, filename: str = "TOML") -> dict:
+    """Parse TOML with the stdlib reader, falling back to the bundled subset.
+
+    Python 3.10 has no `tomllib`, so dep-radar ships :mod:`dep_radar.toml_lite`
+    for the constructs manifests and lockfiles use. A document outside that
+    subset raises a message naming the file, the line and the construct - never
+    a bare traceback.
+    """
+    if tomllib is not None:
+        return tomllib.loads(text)
+    try:
+        return toml_loads(text)
+    except TomlError as exc:
+        raise RequirementError(
+            filename
+            + " is not valid TOML: "
+            + str(exc)
+            + " (Python 3.10 has no tomllib, so dep-radar used its bundled reader; "
+            "run on 3.11+ for the full TOML grammar)"
+        ) from exc
 
 REQUIREMENT_RE = re.compile(
     r"^\s*(?P<name>[A-Za-z0-9][A-Za-z0-9._-]*)"
@@ -159,11 +175,11 @@ def _dependency_from(value: str, kind: str) -> Dependency | None:
 
 
 def _parse_pyproject(path: Path) -> tuple[list[Dependency], dict]:
-    if tomllib is None:  # pragma: no cover - exercised only on 3.10
-        raise RequirementError(TOML_MISSING_MESSAGE)
     try:
-        data = tomllib.loads(path.read_text(encoding="utf-8"))
-    except tomllib.TOMLDecodeError as exc:
+        data = _parse_toml(path.read_text(encoding="utf-8"), path.name)
+    except RequirementError:
+        raise
+    except ValueError as exc:
         raise RequirementError(f"{path.name} is not valid TOML: {exc}") from exc
     deps: list[Dependency] = []
     project = data.get("project") or {}
@@ -322,11 +338,9 @@ def _dedupe(deps: list[Dependency]) -> list[Dependency]:
 
 
 def _parse_poetry_lock(path: Path) -> dict[str, str]:
-    if tomllib is None:  # pragma: no cover - exercised only on 3.10
-        return {}
     try:
-        data = tomllib.loads(path.read_text(encoding="utf-8"))
-    except tomllib.TOMLDecodeError:
+        data = _parse_toml(path.read_text(encoding="utf-8"), path.name)
+    except (RequirementError, ValueError):
         return {}
     versions: dict[str, str] = {}
     for entry in data.get("package", []) or []:

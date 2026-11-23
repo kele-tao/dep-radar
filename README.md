@@ -5,7 +5,7 @@
 [![ci](https://github.com/kele-tao/dep-radar/actions/workflows/ci.yml/badge.svg)](https://github.com/kele-tao/dep-radar/actions/workflows/ci.yml)
 ![python](https://img.shields.io/badge/python-3.10%2B-blue)
 ![license](https://img.shields.io/badge/license-MIT-green)
-![tests](https://img.shields.io/badge/tests-226%20passing-brightgreen)
+![tests](https://img.shields.io/badge/tests-247%20passing-brightgreen)
 
 ![dep-radar scan](docs/screenshot.png)
 
@@ -264,9 +264,15 @@ the tool honest about its limits, but it is explicitly *not* a live CVE feed - s
 [Comparison](#comparison) and [docs/ROADMAP.md](docs/ROADMAP.md). A stale data file that
 you can see and diff beats a live feed you cannot reproduce.
 
-**3. Zero runtime dependencies, stdlib only.** `tomllib` is in the stdlib from 3.11 and the
-Python project needs to run on 3.10, so `tomli` would have been a dependency; instead the
-tool requires 3.10+ and falls back to a clear error message on 3.10 for pyproject parsing.
+**3. Zero runtime dependencies, stdlib only everywhere.** `tomllib` is stdlib from 3.11 but
+dep-radar supports 3.10, so `src/dep_radar/toml_lite.py` implements the subset of TOML 1.0
+that manifests and lockfiles use (tables, arrays of tables, dotted keys, basic/literal/
+multi-line strings, integers, floats, booleans, arrays, inline tables). On 3.11+ the stdlib
+reader is used; on 3.10 the bundled one is. `tests/test_toml_lite.py` drives both paths and
+asserts they produce the same graph, so the 3.10 path is not a decorative branch. Adding
+`tomli` would have been one line, but a supply-chain auditor whose install pulls another
+package for a 60-line parse is a bad look - and the fallback is 247 tests green on a real
+CPython 3.10.20, not just on a simulated one.
 No `requests`, no `rich`, no `click`: a supply-chain auditor with a large dependency tree
 would be its own worst demo, and the CLI surface is small enough that `argparse` is right.
 

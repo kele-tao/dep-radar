@@ -4,6 +4,19 @@ All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and this project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Fixed
+
+- `pyproject.toml` and `poetry.lock` are now parsed on Python 3.10. The stdlib `tomllib`
+  module only exists from 3.11, and dep-radar advertises `requires-python >=3.10`, so
+  `src/dep_radar/toml_lite.py` now implements the TOML subset manifests use (tables,
+  arrays of tables, dotted and quoted keys, all four string forms, integers, floats,
+  booleans, arrays, inline tables) and the parser falls back to it when `tomllib` is
+  missing. A document outside that subset still fails with the file name and line number
+  instead of a traceback. `tests/test_toml_lite.py` exercises both paths and asserts they
+  build the same graph.
+
 ## [1.0.0] - 2026-01-20
 
 First public release.
