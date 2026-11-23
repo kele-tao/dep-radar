@@ -1,5 +1,7 @@
 # dep-radar
 
+**English** | [简体中文](README.zh-CN.md)
+
 **Your dependency tree is a supply-chain attack surface. Audit it offline, in one command, before your install hooks run.**
 
 [![ci](https://github.com/kele-tao/dep-radar/actions/workflows/ci.yml/badge.svg)](https://github.com/kele-tao/dep-radar/actions/workflows/ci.yml)
