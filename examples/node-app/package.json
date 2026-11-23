@@ -1,0 +1,32 @@
+{
+  "name": "acme-dashboard",
+  "version": "2.4.0",
+  "private": true,
+  "description": "Synthetic demo application used by the dep-radar examples.",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "start": "node src/server.js",
+    "test": "node scripts/test.js"
+  },
+  "dependencies": {
+    "acme-github-fetch": "github:acme/github-fetch#v1.2.0",
+    "axios": "^1.6.3",
+    "axois": "^1.6.3",
+    "chalk": "^5.3.0",
+    "core-js": "^3.36.0",
+    "dotenv": "*",
+    "expres": "^4.18.0",
+    "express": "^4.18.2",
+    "legacy-sdk": "https://artifacts.acme.example/legacy-sdk-1.0.0.tgz",
+    "lodash": "^4.17.20",
+    "mupdf": "^1.24.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "request": "^2.88.2",
+    "tslint": "^6.1.3",
+    "typescript": "^5.3.2"
+  }
+}

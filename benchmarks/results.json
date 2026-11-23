@@ -1,0 +1,51 @@
+{
+  "environment": {
+    "python": "3.12.10",
+    "system": "Windows",
+    "machine": "AMD64",
+    "cpu": 16
+  },
+  "repeats": 9,
+  "results": [
+    {
+      "packages": 100,
+      "lockfile_kb": 32.9,
+      "median_ms": 57.16,
+      "min_ms": 45.64,
+      "max_ms": 70.59,
+      "findings": 15,
+      "max_depth": 1,
+      "score": 84
+    },
+    {
+      "packages": 500,
+      "lockfile_kb": 174.4,
+      "median_ms": 218.2,
+      "min_ms": 196.13,
+      "max_ms": 238.84,
+      "findings": 72,
+      "max_depth": 8,
+      "score": 84
+    },
+    {
+      "packages": 1000,
+      "lockfile_kb": 349.0,
+      "median_ms": 490.66,
+      "min_ms": 427.05,
+      "max_ms": 551.12,
+      "findings": 143,
+      "max_depth": 16,
+      "score": 84
+    },
+    {
+      "packages": 2000,
+      "lockfile_kb": 707.1,
+      "median_ms": 1378.06,
+      "min_ms": 1260.75,
+      "max_ms": 1655.06,
+      "findings": 286,
+      "max_depth": 33,
+      "score": 84
+    }
+  ]
+}

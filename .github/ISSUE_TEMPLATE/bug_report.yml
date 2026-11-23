@@ -1,0 +1,46 @@
+name: Bug report
+description: Something parsed wrongly, crashed, or produced a confusing result.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the report. A minimal manifest/lockfile excerpt is worth more than
+        a long description - please redact anything private.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: The command you ran, the output you got, and what you expected.
+      placeholder: |
+        $ dep-radar scan .
+        ...
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: dep-radar version
+      description: Output of `dep-radar --version`.
+    validations:
+      required: true
+  - type: input
+    id: python
+    attributes:
+      label: Python version and OS
+      placeholder: "3.12.10 on Windows 11"
+    validations:
+      required: true
+  - type: textarea
+    id: fixture
+    attributes:
+      label: Minimal reproducing manifest or lockfile
+      description: Redact package names only if they are private; the shape matters.
+      render: json
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I am not reporting a missing advisory - v1.0 uses a committed snapshot (see docs/ROADMAP.md).
+          required: false

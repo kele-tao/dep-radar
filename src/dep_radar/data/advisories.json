@@ -1,0 +1,245 @@
+{
+ "schema": "dep-radar/advisories@1",
+ "source": "Hand-curated offline snapshot of public npm and PyPI incidents and deprecations. Not a substitute for a live advisory feed; see docs/ARCHITECTURE.md.",
+ "updated": "2026-01-15",
+ "entries": [
+  {
+   "id": "DRAD-NPM-2018-0001",
+   "ecosystem": "npm",
+   "package": "event-stream",
+   "kind": "malicious",
+   "affected": "3.3.6",
+   "severity": "critical",
+   "summary": "Maintainer handed the package to an unknown account which added flatmap-stream, a Bitcoin wallet stealer."
+  },
+  {
+   "id": "DRAD-NPM-2021-0002",
+   "ecosystem": "npm",
+   "package": "ua-parser-js",
+   "kind": "malicious",
+   "affected": "0.7.29, 1.0.0",
+   "severity": "critical",
+   "summary": "Account hijack published versions that run a cryptominer and a password stealer on install."
+  },
+  {
+   "id": "DRAD-NPM-2022-0003",
+   "ecosystem": "npm",
+   "package": "node-ipc",
+   "kind": "malicious",
+   "affected": "10.1.1, 10.1.2, 11.0.0",
+   "severity": "critical",
+   "summary": "Protestware: overwrote files on the machine of users with a matching IP geolocation."
+  },
+  {
+   "id": "DRAD-NPM-2022-0004",
+   "ecosystem": "npm",
+   "package": "colors",
+   "kind": "malicious",
+   "affected": "1.4.1",
+   "severity": "high",
+   "summary": "Maintainer sabotage: infinite loop printed to stdout, breaking downstream builds."
+  },
+  {
+   "id": "DRAD-NPM-2022-0005",
+   "ecosystem": "npm",
+   "package": "faker",
+   "kind": "malicious",
+   "affected": "6.6.6",
+   "severity": "high",
+   "summary": "Maintainer sabotage merged into the last published release."
+  },
+  {
+   "id": "DRAD-NPM-2021-0006",
+   "ecosystem": "npm",
+   "package": "coa",
+   "kind": "malicious",
+   "affected": "2.0.3, 2.0.4",
+   "severity": "critical",
+   "summary": "Compromised maintainer token published builds that collect environment variables."
+  },
+  {
+   "id": "DRAD-NPM-2021-0007",
+   "ecosystem": "npm",
+   "package": "rc",
+   "kind": "malicious",
+   "affected": "1.2.9, 1.3.9",
+   "severity": "critical",
+   "summary": "Same campaign as coa: credential harvesting during install."
+  },
+  {
+   "id": "DRAD-NPM-2021-0008",
+   "ecosystem": "npm",
+   "package": "lodash",
+   "kind": "vulnerable",
+   "affected": "<4.17.21",
+   "severity": "high",
+   "cve": "CVE-2021-23337",
+   "summary": "Command injection in template through the variable option."
+  },
+  {
+   "id": "DRAD-NPM-2021-0009",
+   "ecosystem": "npm",
+   "package": "lodash",
+   "kind": "vulnerable",
+   "affected": "<4.17.19",
+   "severity": "high",
+   "cve": "CVE-2020-8203",
+   "summary": "Prototype pollution in zipObjectDeep."
+  },
+  {
+   "id": "DRAD-NPM-2021-0010",
+   "ecosystem": "npm",
+   "package": "minimist",
+   "kind": "vulnerable",
+   "affected": "<1.2.6",
+   "severity": "high",
+   "cve": "CVE-2021-44906",
+   "summary": "Prototype pollution through crafted argument objects."
+  },
+  {
+   "id": "DRAD-NPM-2022-0011",
+   "ecosystem": "npm",
+   "package": "node-fetch",
+   "kind": "vulnerable",
+   "affected": "<2.6.7",
+   "severity": "medium",
+   "cve": "CVE-2022-0235",
+   "summary": "Exposure of sensitive headers on cross-origin redirect."
+  },
+  {
+   "id": "DRAD-NPM-2020-0012",
+   "ecosystem": "npm",
+   "package": "axios",
+   "kind": "vulnerable",
+   "affected": "<0.21.2",
+   "severity": "medium",
+   "cve": "CVE-2020-28168",
+   "summary": "Server-side request forgery through a crafted redirect target."
+  },
+  {
+   "id": "DRAD-NPM-2020-0013",
+   "ecosystem": "npm",
+   "package": "request",
+   "kind": "deprecated",
+   "affected": "*",
+   "severity": "low",
+   "summary": "Deprecated since 2020: no fixes will land, migrate to fetch, undici or got."
+  },
+  {
+   "id": "DRAD-NPM-2019-0014",
+   "ecosystem": "npm",
+   "package": "tslint",
+   "kind": "deprecated",
+   "affected": "*",
+   "severity": "low",
+   "summary": "Deprecated in 2019 in favour of typescript-eslint and the built-in ESLint rules."
+  },
+  {
+   "id": "DRAD-NPM-2020-0015",
+   "ecosystem": "npm",
+   "package": "node-sass",
+   "kind": "deprecated",
+   "affected": "*",
+   "severity": "low",
+   "summary": "Deprecated: LibSass is end of life, use the sass package (Dart Sass)."
+  },
+  {
+   "id": "DRAD-NPM-2015-0016",
+   "ecosystem": "npm",
+   "package": "nomnom",
+   "kind": "deprecated",
+   "affected": "*",
+   "severity": "low",
+   "summary": "Unmaintained argument parser, use commander or yargs."
+  },
+  {
+   "id": "DRAD-NPM-2022-0017",
+   "ecosystem": "npm",
+   "package": "har-validator",
+   "kind": "deprecated",
+   "affected": "*",
+   "severity": "low",
+   "summary": "Unmaintained and pulled in by deprecated request; replace with ajv."
+  },
+  {
+   "id": "DRAD-PYPI-2020-0018",
+   "ecosystem": "pypi",
+   "package": "pyyaml",
+   "kind": "vulnerable",
+   "affected": "<5.4",
+   "severity": "high",
+   "cve": "CVE-2020-14343",
+   "summary": "Arbitrary code execution through FullLoader and unsafe YAML tags."
+  },
+  {
+   "id": "DRAD-PYPI-2021-0019",
+   "ecosystem": "pypi",
+   "package": "urllib3",
+   "kind": "vulnerable",
+   "affected": "<1.26.5",
+   "severity": "high",
+   "cve": "CVE-2021-33503",
+   "summary": "Catastrophic backtracking in URL authority parsing allows a denial of service."
+  },
+  {
+   "id": "DRAD-PYPI-2023-0020",
+   "ecosystem": "pypi",
+   "package": "requests",
+   "kind": "vulnerable",
+   "affected": "<2.31.0",
+   "severity": "medium",
+   "cve": "CVE-2023-32681",
+   "summary": "Proxy-Authorization header leaks when redirected to a different origin."
+  },
+  {
+   "id": "DRAD-PYPI-2023-0021",
+   "ecosystem": "pypi",
+   "package": "cryptography",
+   "kind": "vulnerable",
+   "affected": "<41.0.6",
+   "severity": "medium",
+   "cve": "CVE-2023-49083",
+   "summary": "Null pointer dereference while loading a PKCS#7 certificate chain."
+  },
+  {
+   "id": "DRAD-PYPI-2024-0022",
+   "ecosystem": "pypi",
+   "package": "jinja2",
+   "kind": "vulnerable",
+   "affected": "<3.1.3",
+   "severity": "medium",
+   "cve": "CVE-2024-22195",
+   "summary": "The xmlattr filter accepts keys that inject HTML attributes."
+  },
+  {
+   "id": "DRAD-PYPI-2023-0023",
+   "ecosystem": "pypi",
+   "package": "certifi",
+   "kind": "vulnerable",
+   "affected": "<2023.7.22",
+   "severity": "medium",
+   "cve": "CVE-2023-37920",
+   "summary": "The e-Tugra root certificate was removed for compliance failures but stayed trusted."
+  },
+  {
+   "id": "DRAD-PYPI-2022-0024",
+   "ecosystem": "pypi",
+   "package": "setuptools",
+   "kind": "vulnerable",
+   "affected": "<65.5.1",
+   "severity": "high",
+   "cve": "CVE-2022-40897",
+   "summary": "Regular expression denial of service in the package_index module."
+  },
+  {
+   "id": "DRAD-PYPI-2022-0025",
+   "ecosystem": "pypi",
+   "package": "wheel",
+   "kind": "vulnerable",
+   "affected": "<0.38.1",
+   "severity": "high",
+   "cve": "CVE-2022-40898",
+   "summary": "Regular expression denial of service while parsing a wheel filename."
+  }
+ ]
+}

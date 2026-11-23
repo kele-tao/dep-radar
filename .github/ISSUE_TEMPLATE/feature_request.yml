@@ -1,0 +1,42 @@
+name: Feature request
+description: A new check, a new lockfile format, or a different output.
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: The problem
+      description: What are you unable to see today, and what decision does it block?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behaviour
+      description: A command line and an example of the output you would expect.
+      placeholder: |
+        $ dep-radar diff main.lock feature.lock
+        + 3 new packages, 1 new install script
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - npm / yarn parsing
+        - Python parsing
+        - risk checks
+        - scoring
+        - SBOM
+        - output / CLI
+        - other
+    validations:
+      required: true
+  - type: checkboxes
+    id: offline
+    attributes:
+      label: Constraints
+      options:
+        - label: This can work fully offline (no network at scan time).
+          required: false

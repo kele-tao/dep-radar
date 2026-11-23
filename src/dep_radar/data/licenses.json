@@ -1,0 +1,230 @@
+{
+ "schema": "dep-radar/licenses@1",
+ "note": "Offline classification. A licence is classified from its SPDX identifier only; expressions are evaluated by the weakest term (e.g. 'MIT OR GPL-3.0' is copyleft-optional).",
+ "licenses": {
+  "0bsd": [
+   "permissive",
+   "BSD Zero Clause"
+  ],
+  "afl-3.0": [
+   "permissive",
+   "Academic Free License"
+  ],
+  "apache-1.1": [
+   "permissive",
+   "Apache 1.1"
+  ],
+  "apache-2.0": [
+   "permissive",
+   "Apache 2.0, patent grant, requires NOTICE"
+  ],
+  "artistic-2.0": [
+   "permissive",
+   "Artistic 2.0"
+  ],
+  "bsd-1-clause": [
+   "permissive",
+   "BSD 1-Clause"
+  ],
+  "bsd-2-clause": [
+   "permissive",
+   "BSD 2-Clause"
+  ],
+  "bsd-3-clause": [
+   "permissive",
+   "BSD 3-Clause"
+  ],
+  "bsd-3-clause-clear": [
+   "permissive",
+   "BSD 3-Clause Clear"
+  ],
+  "bsl-1.0": [
+   "permissive",
+   "Boost Software License"
+  ],
+  "cc0-1.0": [
+   "public-domain",
+   "Creative Commons Zero"
+  ],
+  "cc-by-3.0": [
+   "permissive",
+   "Creative Commons Attribution"
+  ],
+  "cc-by-4.0": [
+   "permissive",
+   "Creative Commons Attribution"
+  ],
+  "cddl-1.0": [
+   "weak-copyleft",
+   "Common Development and Distribution License"
+  ],
+  "cddl-1.1": [
+   "weak-copyleft",
+   "Common Development and Distribution License"
+  ],
+  "epl-1.0": [
+   "weak-copyleft",
+   "Eclipse Public License"
+  ],
+  "epl-2.0": [
+   "weak-copyleft",
+   "Eclipse Public License"
+  ],
+  "eupl-1.2": [
+   "copyleft",
+   "European Union Public License"
+  ],
+  "agpl-3.0": [
+   "copyleft",
+   "Network copyleft: use over a network counts as distribution"
+  ],
+  "agpl-3.0-only": [
+   "copyleft",
+   "Network copyleft: use over a network counts as distribution"
+  ],
+  "agpl-3.0-or-later": [
+   "copyleft",
+   "Network copyleft: use over a network counts as distribution"
+  ],
+  "gpl-2.0": [
+   "copyleft",
+   "GNU GPL v2"
+  ],
+  "gpl-2.0-only": [
+   "copyleft",
+   "GNU GPL v2"
+  ],
+  "gpl-2.0-or-later": [
+   "copyleft",
+   "GNU GPL v2 or later"
+  ],
+  "gpl-3.0": [
+   "copyleft",
+   "GNU GPL v3"
+  ],
+  "gpl-3.0-only": [
+   "copyleft",
+   "GNU GPL v3"
+  ],
+  "gpl-3.0-or-later": [
+   "copyleft",
+   "GNU GPL v3 or later"
+  ],
+  "isc": [
+   "permissive",
+   "ISC"
+  ],
+  "lgpl-2.1": [
+   "weak-copyleft",
+   "GNU LGPL v2.1"
+  ],
+  "lgpl-2.1-only": [
+   "weak-copyleft",
+   "GNU LGPL v2.1"
+  ],
+  "lgpl-2.1-or-later": [
+   "weak-copyleft",
+   "GNU LGPL v2.1 or later"
+  ],
+  "lgpl-3.0": [
+   "weak-copyleft",
+   "GNU LGPL v3"
+  ],
+  "lgpl-3.0-only": [
+   "weak-copyleft",
+   "GNU LGPL v3"
+  ],
+  "lgpl-3.0-or-later": [
+   "weak-copyleft",
+   "GNU LGPL v3 or later"
+  ],
+  "mit": [
+   "permissive",
+   "MIT"
+  ],
+  "mit-0": [
+   "permissive",
+   "MIT No Attribution"
+  ],
+  "mpl-2.0": [
+   "weak-copyleft",
+   "Mozilla Public License: file-level copyleft"
+  ],
+  "ms-pl": [
+   "permissive",
+   "Microsoft Public License"
+  ],
+  "ms-rl": [
+   "weak-copyleft",
+   "Microsoft Reciprocal License"
+  ],
+  "ncsa": [
+   "permissive",
+   "University of Illinois/NCSA"
+  ],
+  "ofl-1.1": [
+   "permissive",
+   "SIL Open Font License"
+  ],
+  "osl-3.0": [
+   "copyleft",
+   "Open Software License"
+  ],
+  "postgresql": [
+   "permissive",
+   "PostgreSQL License"
+  ],
+  "python-2.0": [
+   "permissive",
+   "Python Software Foundation License"
+  ],
+  "psf-2.0": [
+   "permissive",
+   "Python Software Foundation License"
+  ],
+  "unlicense": [
+   "public-domain",
+   "The Unlicense"
+  ],
+  "upl-1.0": [
+   "permissive",
+   "Universal Permissive License"
+  ],
+  "vim": [
+   "permissive",
+   "Vim License"
+  ],
+  "wtfpl": [
+   "public-domain",
+   "Do What The F*ck You Want To Public License"
+  ],
+  "zlib": [
+   "permissive",
+   "zlib"
+  ],
+  "zpl-2.1": [
+   "permissive",
+   "Zope Public License"
+  ],
+  "sspl-1.0": [
+   "proprietary",
+   "Server Side Public License: not OSI approved"
+  ],
+  "busl-1.1": [
+   "proprietary",
+   "Business Source License: time-delayed open source"
+  ],
+  "elastic-2.0": [
+   "proprietary",
+   "Elastic License 2.0: no managed service"
+  ],
+  "unlicensed": [
+   "proprietary",
+   "Explicitly no licence granted"
+  ],
+  "proprietary": [
+   "proprietary",
+   "Vendor licence, redistribution restricted"
+  ]
+ }
+}
